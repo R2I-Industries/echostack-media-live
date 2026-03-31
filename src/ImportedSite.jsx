@@ -149,7 +149,7 @@ const PROCESS_STEPS = [
   },
 ];
 
-// ─── Hash Routing ───
+// ─── Pathname Routing ───
 const ROUTE_MAP = {
   "/": "Home",
   "/services": "Services",
@@ -170,8 +170,8 @@ function pageToPath(page) {
   return "/";
 }
 
-function pathToPage(hash) {
-  const path = (hash || "").replace(/^#/, "") || "/";
+function pathToPage(pathname) {
+  const path = pathname || "/";
   if (ROUTE_MAP[path]) return ROUTE_MAP[path];
   if (path.startsWith("/services/deliverables/")) {
     const slug = path.replace("/services/deliverables/", "");
@@ -1583,7 +1583,7 @@ function PrivacyPolicyPage() {
     <section style={styles.section}>
       <div style={{ ...styles.container, maxWidth: "800px" }}>
         <h1 style={styles.pageTitle}>Privacy Policy</h1>
-        <p style={styles.legalMeta}>Effective date: March 30, 2026</p>
+        <p style={styles.legalMeta}>Effective date: March 31, 2026</p>
 
         <p style={styles.legalText}>
           This Privacy Policy explains how {BRAND.legal}, a subsidiary of {BRAND.parent},
@@ -1661,7 +1661,7 @@ function TermsOfServicePage() {
     <section style={styles.section}>
       <div style={{ ...styles.container, maxWidth: "800px" }}>
         <h1 style={styles.pageTitle}>Terms of Service</h1>
-        <p style={styles.legalMeta}>Effective date: March 30, 2026</p>
+        <p style={styles.legalMeta}>Effective date: March 31, 2026</p>
 
         <p style={styles.legalText}>
           These Terms of Service govern your use of {BRAND.domain} and any services
@@ -1865,14 +1865,12 @@ function Footer({ navigate }) {
 // ─── App ───
 
 export default function App() {
-  const [page, setPage] = useState(() => pathToPage(window.location.hash));
+  const [page, setPage] = useState(() => pathToPage(window.location.pathname));
 
   useEffect(() => {
-    const onHash = () => setPage(pathToPage(window.location.hash));
-    window.addEventListener("hashchange", onHash);
-    // Set initial hash if empty
-    if (!window.location.hash) window.location.hash = "#/";
-    return () => window.removeEventListener("hashchange", onHash);
+    const onPopState = () => setPage(pathToPage(window.location.pathname));
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   // Set favicon dynamically
@@ -1886,7 +1884,8 @@ export default function App() {
 
   const navigate = (p) => {
     const path = pageToPath(p);
-    window.location.hash = "#" + path;
+    window.history.pushState(null, "", path);
+    setPage(p);
     window.scrollTo(0, 0);
   };
 
