@@ -149,6 +149,41 @@ const PROCESS_STEPS = [
   },
 ];
 
+// ─── Hash Routing ───
+const ROUTE_MAP = {
+  "/": "Home",
+  "/services": "Services",
+  "/about": "About",
+  "/contact": "Contact",
+  "/privacy": "Privacy Policy",
+  "/terms": "Terms of Service",
+  "/services/deliverables": "FullServices",
+  "/services/process": "FullProcess",
+};
+
+function pageToPath(page) {
+  for (const [path, name] of Object.entries(ROUTE_MAP)) {
+    if (name === page) return path;
+  }
+  if (page.startsWith("detail:")) return "/services/deliverables/" + page.replace("detail:", "");
+  if (page.startsWith("step:")) return "/services/process/" + page.replace("step:", "");
+  return "/";
+}
+
+function pathToPage(hash) {
+  const path = (hash || "").replace(/^#/, "") || "/";
+  if (ROUTE_MAP[path]) return ROUTE_MAP[path];
+  if (path.startsWith("/services/deliverables/")) {
+    const slug = path.replace("/services/deliverables/", "");
+    if (DELIVERABLES.find((d) => d.key === "detail:" + slug)) return "detail:" + slug;
+  }
+  if (path.startsWith("/services/process/")) {
+    const slug = path.replace("/services/process/", "");
+    if (PROCESS_STEPS.find((s) => s.key === "step:" + slug)) return "step:" + slug;
+  }
+  return "Home";
+}
+
 // Color palette derived from the EchoStack Media logo
 // Deep navy base, bright blue accents, ice blue highlights, silver text
 const palette = {
@@ -287,6 +322,7 @@ function HomePage({ navigate }) {
 
 function ServicesPage({ navigate }) {
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [hoveredStep, setHoveredStep] = useState(null);
 
   return (
     <section style={styles.section}>
@@ -302,7 +338,7 @@ function ServicesPage({ navigate }) {
         <FadeIn delay={200}>
           <div style={styles.card}>
             <h2 style={styles.cardTitle}>What You Get</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               {DELIVERABLES.map((d, i) => (
                 <div
                   key={d.key}
@@ -313,44 +349,63 @@ function ServicesPage({ navigate }) {
                   onMouseEnter={() => setHoveredItem(i)}
                   onMouseLeave={() => setHoveredItem(null)}
                   style={{
-                    padding: "0.9rem 1rem",
+                    padding: "0.85rem 1rem",
                     borderRadius: "8px",
                     cursor: "pointer",
                     background: hoveredItem === i ? palette.accentSubtle : "transparent",
                     border: `1px solid ${hoveredItem === i ? palette.borderLight : "transparent"}`,
                     transition: "background 0.2s, border-color 0.2s",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "space-between",
-                    gap: "1rem",
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto",
+                    alignItems: "baseline",
+                    gap: "1.5rem",
+                    borderBottom: i < DELIVERABLES.length - 1 && hoveredItem !== i ? `1px solid ${palette.border}22` : "1px solid transparent",
                   }}
                 >
-                  <div style={{ flex: 1 }}>
+                  <div style={{ lineHeight: 1.7 }}>
                     <span style={{
                       color: hoveredItem === i ? palette.white : palette.accentLight,
                       fontWeight: 600,
                       fontSize: "0.95rem",
                       transition: "color 0.2s",
                     }}>
-                      {d.title}:
-                    </span>{" "}
-                    <span style={{ color: palette.text, lineHeight: 1.7, fontSize: "0.95rem" }}>
+                      {d.title}
+                    </span>
+                    <span style={{ color: palette.text, fontSize: "0.93rem", marginLeft: "0.5rem" }}>
                       {d.blurb}
                     </span>
                   </div>
                   <span style={{
                     color: hoveredItem === i ? palette.accentLight : palette.textMuted,
-                    fontSize: "0.78rem",
+                    fontSize: "0.76rem",
                     fontFamily: font.mono,
                     whiteSpace: "nowrap",
-                    marginTop: "2px",
-                    opacity: hoveredItem === i ? 1 : 0.5,
+                    opacity: hoveredItem === i ? 1 : 0.4,
                     transition: "opacity 0.2s, color 0.2s",
                   }}>
                     Learn more &rarr;
                   </span>
                 </div>
               ))}
+            </div>
+            <div style={{ textAlign: "center", marginTop: "1rem" }}>
+              <button
+                onClick={() => navigate("FullServices")}
+                style={{
+                  background: "none",
+                  border: "none",
+                  color: palette.textMuted,
+                  fontFamily: font.mono,
+                  fontSize: "0.76rem",
+                  cursor: "pointer",
+                  padding: "0.4rem 0",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => { e.target.style.color = palette.accentLight; }}
+                onMouseLeave={(e) => { e.target.style.color = palette.textMuted; }}
+              >
+                View full deliverables breakdown &rarr;
+              </button>
             </div>
           </div>
         </FadeIn>
@@ -369,61 +424,70 @@ function ServicesPage({ navigate }) {
         <FadeIn delay={500}>
           <div style={styles.card}>
             <h2 style={styles.cardTitle}>How It Works</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-              {PROCESS_STEPS.map((s, i) => (
-                <div
-                  key={s.key}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => navigate(s.key)}
-                  onKeyDown={(e) => { if (e.key === "Enter") navigate(s.key); }}
-                  onMouseEnter={(e) => { e.currentTarget.style.background = palette.accentSubtle; e.currentTarget.style.borderColor = palette.borderLight; e.currentTarget.querySelector(".hw-arrow").style.opacity = "1"; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "transparent"; e.currentTarget.querySelector(".hw-arrow").style.opacity = "0.5"; }}
-                  style={{
-                    padding: "0.9rem 1rem",
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                    background: "transparent",
-                    border: "1px solid transparent",
-                    transition: "background 0.2s, border-color 0.2s",
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "space-between",
-                    gap: "1rem",
-                  }}
-                >
-                  <div style={{ flex: 1 }}>
-                    <span style={{
-                      fontFamily: font.mono,
-                      fontSize: "0.68rem",
-                      color: palette.textMuted,
-                      marginRight: "0.5rem",
-                    }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <strong style={{ color: palette.accentLight, fontSize: "0.95rem" }}>
-                      {s.title}
-                    </strong>{" "}
-                    <span style={{ color: palette.text, lineHeight: 1.7, fontSize: "0.95rem" }}>
-                      {s.blurb}
-                    </span>
-                  </div>
-                  <span
-                    className="hw-arrow"
+            <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+              {PROCESS_STEPS.map((s, i) => {
+                const isHov = hoveredStep === i;
+                return (
+                  <div
+                    key={s.key}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => navigate(s.key)}
+                    onKeyDown={(e) => { if (e.key === "Enter") navigate(s.key); }}
+                    onMouseEnter={() => setHoveredStep(i)}
+                    onMouseLeave={() => setHoveredStep(null)}
                     style={{
-                      color: palette.textMuted,
-                      fontSize: "0.78rem",
-                      fontFamily: font.mono,
-                      whiteSpace: "nowrap",
-                      marginTop: "2px",
-                      opacity: 0.5,
-                      transition: "opacity 0.2s, color 0.2s",
+                      padding: "0.85rem 1rem",
+                      borderRadius: "8px",
+                      cursor: "pointer",
+                      background: isHov ? palette.accentSubtle : "transparent",
+                      border: `1px solid ${isHov ? palette.borderLight : "transparent"}`,
+                      transition: "background 0.2s, border-color 0.2s",
+                      display: "grid",
+                      gridTemplateColumns: "2.2rem 1fr auto",
+                      alignItems: "baseline",
+                      gap: "0.75rem",
+                      borderBottom: i < PROCESS_STEPS.length - 1 && !isHov ? `1px solid ${palette.border}22` : "1px solid transparent",
                     }}
                   >
-                    Learn more &rarr;
-                  </span>
-                </div>
-              ))}
+                    <span style={{
+                      fontFamily: font.mono,
+                      fontSize: "0.82rem",
+                      fontWeight: 700,
+                      color: isHov ? palette.accentLight : palette.accent,
+                      background: isHov ? palette.accentGlow : `${palette.accent}12`,
+                      borderRadius: "6px",
+                      width: "2.2rem",
+                      height: "2.2rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      transition: "color 0.2s, background 0.2s",
+                      flexShrink: 0,
+                    }}>
+                      {i + 1}
+                    </span>
+                    <div style={{ lineHeight: 1.7 }}>
+                      <strong style={{ color: isHov ? palette.white : palette.accentLight, fontSize: "0.95rem", transition: "color 0.2s" }}>
+                        {s.title}
+                      </strong>
+                      <span style={{ color: palette.text, fontSize: "0.93rem", marginLeft: "0.5rem" }}>
+                        {s.blurb}
+                      </span>
+                    </div>
+                    <span style={{
+                      color: isHov ? palette.accentLight : palette.textMuted,
+                      fontSize: "0.76rem",
+                      fontFamily: font.mono,
+                      whiteSpace: "nowrap",
+                      opacity: isHov ? 1 : 0.4,
+                      transition: "opacity 0.2s, color 0.2s",
+                    }}>
+                      Learn more &rarr;
+                    </span>
+                  </div>
+                );
+              })}
             </div>
             <div style={{ textAlign: "center", marginTop: "1rem" }}>
               <button
@@ -468,7 +532,7 @@ function DeliverableDetailPage({ deliverable, navigate }) {
   const d = deliverable;
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "760px" }}>
+      <div style={{ ...styles.container, maxWidth: "820px" }}>
         <FadeIn delay={80}>
           <button
             onClick={() => navigate("Services")}
@@ -575,7 +639,7 @@ function ProcessStepDetailPage({ step, navigate }) {
   const s = step;
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "760px" }}>
+      <div style={{ ...styles.container, maxWidth: "820px" }}>
         <FadeIn delay={80}>
           <button
             onClick={() => navigate("Services")}
@@ -715,7 +779,7 @@ function FullProcessPage({ navigate }) {
     }
   };
 
-  const sideNavWidth = 220;
+  const sideNavWidth = 250;
 
   return (
     <section style={{ padding: "2.5rem 0 4rem", position: "relative" }}>
@@ -783,11 +847,11 @@ function FullProcessPage({ navigate }) {
       </div>
 
       <div style={{
-        maxWidth: "1140px",
+        maxWidth: "1340px",
         margin: "0 auto",
-        padding: "0 1.5rem",
+        padding: "0 2.5rem",
         display: "flex",
-        gap: "2.5rem",
+        gap: "3rem",
         alignItems: "flex-start",
       }}>
         {/* Desktop sticky sidebar */}
@@ -821,7 +885,9 @@ function FullProcessPage({ navigate }) {
                 key={s.key}
                 onClick={() => scrollTo(s.key)}
                 style={{
-                  display: "block",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.55rem",
                   width: "100%",
                   background: isActive ? palette.accentSubtle : "transparent",
                   border: "none",
@@ -831,7 +897,7 @@ function FullProcessPage({ navigate }) {
                   fontFamily: font.body,
                   fontSize: "0.82rem",
                   fontWeight: isActive ? 600 : 400,
-                  padding: "0.5rem 0.65rem 0.5rem 0.75rem",
+                  padding: "0.55rem 0.65rem 0.55rem 0.6rem",
                   marginBottom: "2px",
                   cursor: "pointer",
                   textAlign: "left",
@@ -841,10 +907,24 @@ function FullProcessPage({ navigate }) {
                 onMouseEnter={(e) => { if (!isActive) e.target.style.color = palette.white; }}
                 onMouseLeave={(e) => { if (!isActive) e.target.style.color = palette.textMuted; }}
               >
-                <span style={{ fontFamily: font.mono, fontSize: "0.65rem", marginRight: "0.4rem", opacity: 0.6 }}>
-                  {String(i + 1).padStart(2, "0")}
+                <span style={{
+                  fontFamily: font.mono,
+                  fontSize: "0.7rem",
+                  fontWeight: 700,
+                  color: isActive ? palette.accentLight : palette.accent,
+                  background: isActive ? palette.accentGlow : `${palette.accent}12`,
+                  borderRadius: "5px",
+                  width: "1.6rem",
+                  height: "1.6rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                  transition: "all 0.2s",
+                }}>
+                  {i + 1}
                 </span>
-                {s.title}
+                <span>{s.title}</span>
               </button>
             );
           })}
@@ -866,7 +946,7 @@ function FullProcessPage({ navigate }) {
             }}>
               Complete Process Breakdown
             </p>
-            <p style={{ ...styles.bodyText, maxWidth: "640px", marginBottom: "2.5rem" }}>
+            <p style={{ ...styles.bodyText, maxWidth: "720px", marginBottom: "2.5rem" }}>
               The Competitor Intelligence Brief engagement follows four clear steps from initial
               inquiry to final delivery. Each step is explained in detail below so you know exactly
               what to expect at every stage.
@@ -888,13 +968,13 @@ function FullProcessPage({ navigate }) {
               <FadeIn delay={100}>
                 <p style={{
                   fontFamily: font.mono,
-                  fontSize: "0.68rem",
-                  letterSpacing: "0.12em",
+                  fontSize: "0.72rem",
+                  letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   color: palette.textMuted,
-                  marginBottom: "0.4rem",
+                  marginBottom: "0.5rem",
                 }}>
-                  Step {String(i + 1).padStart(2, "0")} / {String(PROCESS_STEPS.length).padStart(2, "0")}
+                  Step {i + 1} of {PROCESS_STEPS.length}
                 </p>
                 <h2 style={{
                   fontFamily: font.display,
@@ -911,7 +991,7 @@ function FullProcessPage({ navigate }) {
                   color: palette.highlight,
                   lineHeight: 1.75,
                   marginBottom: "1.5rem",
-                  maxWidth: "640px",
+                  maxWidth: "720px",
                 }}>
                   {s.summary}
                 </p>
@@ -920,7 +1000,7 @@ function FullProcessPage({ navigate }) {
               <FadeIn delay={180}>
                 <div style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
                   gap: "1rem",
                 }}>
                   <div style={styles.card}>
@@ -969,7 +1049,7 @@ function FullProcessPage({ navigate }) {
               }}>
                 Ready to begin?
               </h2>
-              <p style={{ ...styles.bodyText, maxWidth: "480px", margin: "0 auto 1.5rem", color: palette.text }}>
+              <p style={{ ...styles.bodyText, maxWidth: "540px", margin: "0 auto 1.5rem", color: palette.text }}>
                 The process starts with a single inquiry. No commitment required to start the conversation.
               </p>
               <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
@@ -1039,7 +1119,7 @@ function FullServicesPage({ navigate }) {
     }
   };
 
-  const sideNavWidth = 220;
+  const sideNavWidth = 250;
 
   return (
     <section style={{ padding: "2.5rem 0 4rem", position: "relative" }}>
@@ -1107,11 +1187,11 @@ function FullServicesPage({ navigate }) {
       </div>
 
       <div style={{
-        maxWidth: "1140px",
+        maxWidth: "1340px",
         margin: "0 auto",
-        padding: "0 1.5rem",
+        padding: "0 2.5rem",
         display: "flex",
-        gap: "2.5rem",
+        gap: "3rem",
         alignItems: "flex-start",
       }}>
         {/* Desktop sticky sidebar */}
@@ -1187,7 +1267,7 @@ function FullServicesPage({ navigate }) {
             }}>
               Complete Service Breakdown
             </p>
-            <p style={{ ...styles.bodyText, maxWidth: "640px", marginBottom: "2.5rem" }}>
+            <p style={{ ...styles.bodyText, maxWidth: "720px", marginBottom: "2.5rem" }}>
               Everything included in your Competitor Intelligence Brief, explained in detail.
               Each section below describes what you receive, why it matters, and how it supports
               better decisions.
@@ -1232,7 +1312,7 @@ function FullServicesPage({ navigate }) {
                   color: palette.highlight,
                   lineHeight: 1.75,
                   marginBottom: "1.5rem",
-                  maxWidth: "640px",
+                  maxWidth: "720px",
                 }}>
                   {d.summary}
                 </p>
@@ -1241,7 +1321,7 @@ function FullServicesPage({ navigate }) {
               <FadeIn delay={180}>
                 <div style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
                   gap: "1rem",
                 }}>
                   <div style={styles.card}>
@@ -1290,7 +1370,7 @@ function FullServicesPage({ navigate }) {
               }}>
                 Ready to get started?
               </h2>
-              <p style={{ ...styles.bodyText, maxWidth: "480px", margin: "0 auto 1.5rem", color: palette.text }}>
+              <p style={{ ...styles.bodyText, maxWidth: "540px", margin: "0 auto 1.5rem", color: palette.text }}>
                 Every Competitor Intelligence Brief includes all seven deliverables described above.
                 Reach out to scope your engagement.
               </p>
@@ -1501,9 +1581,9 @@ function ContactPage() {
 function PrivacyPolicyPage() {
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "740px" }}>
+      <div style={{ ...styles.container, maxWidth: "800px" }}>
         <h1 style={styles.pageTitle}>Privacy Policy</h1>
-        <p style={styles.legalMeta}>Effective date: [TO BE SET BEFORE PUBLICATION]</p>
+        <p style={styles.legalMeta}>Effective date: March 30, 2026</p>
 
         <p style={styles.legalText}>
           This Privacy Policy explains how {BRAND.legal}, a subsidiary of {BRAND.parent},
@@ -1579,9 +1659,9 @@ function PrivacyPolicyPage() {
 function TermsOfServicePage() {
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "740px" }}>
+      <div style={{ ...styles.container, maxWidth: "800px" }}>
         <h1 style={styles.pageTitle}>Terms of Service</h1>
-        <p style={styles.legalMeta}>Effective date: [TO BE SET BEFORE PUBLICATION]</p>
+        <p style={styles.legalMeta}>Effective date: March 30, 2026</p>
 
         <p style={styles.legalText}>
           These Terms of Service govern your use of {BRAND.domain} and any services
@@ -1785,21 +1865,37 @@ function Footer({ navigate }) {
 // ─── App ───
 
 export default function App() {
-  const [page, setPage] = useState("Home");
+  const [page, setPage] = useState(() => pathToPage(window.location.hash));
+
+  useEffect(() => {
+    const onHash = () => setPage(pathToPage(window.location.hash));
+    window.addEventListener("hashchange", onHash);
+    // Set initial hash if empty
+    if (!window.location.hash) window.location.hash = "#/";
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  // Set favicon dynamically
+  useEffect(() => {
+    try {
+      let link = document.querySelector("link[rel='icon']");
+      if (!link) { link = document.createElement("link"); link.rel = "icon"; document.head.appendChild(link); }
+      link.href = ES_LOGO;
+    } catch (e) {}
+  }, []);
 
   const navigate = (p) => {
-    setPage(p);
+    const path = pageToPath(p);
+    window.location.hash = "#" + path;
     window.scrollTo(0, 0);
   };
 
   const renderPage = () => {
-    // Check if it's a deliverable detail page
     if (page.startsWith("detail:")) {
       const deliverable = DELIVERABLES.find((d) => d.key === page);
       if (deliverable) return <DeliverableDetailPage deliverable={deliverable} navigate={navigate} />;
       return <HomePage navigate={navigate} />;
     }
-    // Check if it's a process step detail page
     if (page.startsWith("step:")) {
       const step = PROCESS_STEPS.find((s) => s.key === page);
       if (step) return <ProcessStepDetailPage step={step} navigate={navigate} />;
@@ -1852,9 +1948,9 @@ const styles = {
     transition: "box-shadow 0.3s, border-color 0.3s",
   },
   headerInner: {
-    maxWidth: "1080px",
+    maxWidth: "1320px",
     margin: "0 auto",
-    padding: "0 1.5rem",
+    padding: "0 2.5rem",
     height: "68px",
     display: "flex",
     alignItems: "center",
@@ -1940,7 +2036,7 @@ const styles = {
   },
   heroInner: {
     position: "relative",
-    maxWidth: "780px",
+    maxWidth: "880px",
     margin: "0 auto",
     padding: "5.5rem 1.5rem 5rem",
     textAlign: "center",
@@ -1967,7 +2063,7 @@ const styles = {
   heroSub: {
     fontSize: "1.08rem",
     color: palette.textMuted,
-    maxWidth: "560px",
+    maxWidth: "620px",
     margin: "0 auto 2.5rem",
     lineHeight: 1.7,
   },
@@ -2010,9 +2106,9 @@ const styles = {
     padding: "4rem 0",
   },
   container: {
-    maxWidth: "820px",
+    maxWidth: "1000px",
     margin: "0 auto",
-    padding: "0 1.5rem",
+    padding: "0 2rem",
   },
   sectionTitle: {
     fontFamily: font.display,
@@ -2126,7 +2222,7 @@ const styles = {
     marginTop: "auto",
   },
   footerInner: {
-    maxWidth: "1080px",
+    maxWidth: "1320px",
     margin: "0 auto",
     textAlign: "center",
   },
