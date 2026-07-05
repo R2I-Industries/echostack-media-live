@@ -17,9 +17,9 @@ const BRAND = {
 const ES_LOGO = "data:image/png;base64,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";
 const R2I_LOGO = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAAA4eUlEQVR42u1dd3xUVfY/59733vRk0kNCEkLvSBVUigLSRKzYFdeyupYtlrWirr2t+rOXFStiwYaKIiIdpPfeSyA9mWTae/fe8/vjTUIouivLIsT3NR8dJ5lyZ77v3HO+9xRUSoEDB0cazPkIHDjEcuAQy4FDLAcOHGI5cIjlwCGWAwcOsRw4xHLgEMuBA4dYDhxiOXCI5cCBQywHDrEcOMRy4MAhlgOHWA4cYjlw4BDLgUMsBw6xHDhwiOXAIZYDh1gOHDjEcuAQy4FDLAcOHGI5cIjlwCGWAwcOsRw4xHLgEMuBA4dYDhxiOXCI5cCBQywHDrEcOMRy4MAhlgOHWA4cYjlw4BDLgUMsBw6xHDhwiOXAIdaRBhEdcMOBQ6wGbCACgobcSPzqILYgYv0NRGSM2bcZYw255fDs90ksAkVAxBgDIERAxpAhY0igAChBFCmR4QFcqQ1HFChAqgpV14YjxSWliFhTW7N7z+56btUTzsHvglj2t5747jkDVLv37AXEmppwqDYSM82yilKGHJGVVVas37SZaVp1qBIASBEAMMYQcfPmzUVFexGYsOS0adO3b99JRDU1tbt37d2wYQMRIWIsFisrK3NM1++CWJSwTzY/2Nr1GxC1H2YtqqoKVVWHPvvym4mff1daXhmqDkkpaiKRaTOWz124dMasJYjIOLMsa+/evQCQl5e3ZvX6mbPmMsabNMlRSiGiy+WePXueEKpo917TtCorK7dt24aI9ovW754OGhuxkIgxFgrVSCUXLlouhCwqLnviuTdWrd4slMprmhOPaxs3727XqvWyFRvicVGQkzv5+3mrV24ePLCvZVorV69ZtGzVjp3FRJSaEiwvr2zWrGlqMKlTx/ZFu/eUlpYvX7rylJN7t2/f1uV2LV++YunSVYXNm9seWnUoFDPjAASgiNQhvLbfDwgUKAISBBYpQSRI1f9YRASofr2JZ7+hrQKARUtWzJqzWOPa+i07KqqqB/Y76exRg3btqbRMCQA7iqvOHHYqACxbs/n5Nz5miAX5GUOHDfK4DUBITUldtmR1dSiEiEuXLc/OzsjPy1dKut1G7949P/7ksz179/bq1UMplZmZntc0t7yiIjkpmYgsy5o1e7bGOSAqhYzx3+3GiAAKCQgJSGdkMKYz0Bmr/zEYAVhIqJj6VRZeO8orUaQYssSakJWWlX8+edYJ3TuYUqWnpggpWzVr1qdPl8Ur1y1ehus2buh0y8VCissuGDrunc8uvvauDVvL9uzdnZMZ0HU9Nyf73HOGfTX5uw0bN+/atXvYsCFSKcZQCCsnJ7tpTlN7s1NKIGrZTbJ0XUfOEHHpkmV5TfPLSisyMtIZw6lTp3Xt2iU1NdV2xX5n1goYIBEixidVWNtM7mKgCJRSQCQBUzQ6L425UQPFCI9FYpEtBXDkQloa1+ctWNKmRbNhp59quNy33vvPJlkZjGF5WbmuuYae1nP0VffkZ6a//Mzduq5LSSnB5L/dPGbBynUXjLnT43JxzhcsWtb1hPZZmenFJaGNm/eMPGM4kVIKiUDTeHll9byFi/547Zh4PO5yuYiUZYnq6tDc2fPLKqq8bqNr166bNm3asWOHIvT5vCkpKYiIgEBEvz/XS6LUQX+1WH5dogEHUCqxlRHL85qjUnSXTqR+3TV31LZCQsSamtqlS1dqXBfS+mnBWklEBAP793nigVu2bt8mCJatXL9x09ZWBU3LiiuGjOifk5VixgXnKJWyLNGjYytvUvKiNdsnTPyqPBSd/P3c9z6chITTp8+Y+uNMRMY5Ms5Mi1544bV27dvkNW0ye/bcFctXIzKlZElJxYaNm3p07zJkyECXi3fs2N5wGcuWLe/TpzdjrLoqJIQFv0uPHoEAKUkxLpTHErpUulAuobiQSUIxJPj1n8tRs1gopQwE/Os2bikqrxwxqF9SUiA1PUVJJaWVl53u8qbc99Czfft07dKlAxGMvf0PYx998ezTT2mSkWIJQYoMQ//n6xPWLN+wevW6i88Z1K1Tm2gsVhOL+QyjpLTsnXc+XLty/aWXn+/1ev/57Cuablx64XkAqm/fU6bPmLP+k8+bFRZIUmeePTIjJSilQEQAys8vWLdukxRi46bNO3bs7tOnl9fLfodaV8J7Mi0ZYcBtUZoUkJRMgknkOpzvWyn1v438QCAwpQiRhUI1xaXlN9z2ZM8e3detX33GkP5XXToKCMpCoe6nXvLoHdddPHqEVAqJkPOhF92yYc3W2VPfzM0IAsCX388/+/JbJ7zx8Pkj+tu+GjbQSWMx89XXxtXWhjXDXVFececdfw4m+5VSjHEAWLduwzdfT60M1/7lpmtSg0EiAkDGMBSqHff2B5kZqYUFuWkZGUkBf1ZWlv2BNDpnSxEwAkRQDT13ACBCi5SLwwXzaj7axb2akgqUUghkKmwdMBcNTgnomqJjbCtkqClFnHPGIGrGN2/e+sTDN40c3nPowJPefHfSdbc8TAj/everts0LLh49QgjJEAlRKfXR6//QPdppI68tKq2YMmvxqAtueOy+m88f0d8UlpTK9ocUEREJId1u49JLRldV1ZSVl914w9XB5ICUCpHZv23btvW5540KhyOxSAwRCRKSrCIVjcX69+/Xu0/vVi1bZGVlbd68pba21la5GpeIigjAQQJJVQeplFRKkSSFBKgsCcIiYZJlgjBBmiAskAIO63P4X22FRGR7NrU1keRgYO3GzYX5TbMy07NyM/MzM9Mz0k7q1vmKS84+78q7egy+sqKs4pUn76i3nQxRSZXs93376Qs9+o85ZeSNRSVVV4wZfdt1o+PC0jlHwIRFIVt8RyIVSPK7PUZeQUFe02ypLMYSS2OMEam0tCBDVlFRlZvbBAikkrquLVy8tFWLZjlNMhQJhlxKKi4ubtGieXFxcSAQ8Hq9dpzYKBiGSEoicsYPsiWkcQnA0nQCy1JAShGAQgSQyJRgdW4Y/IZRoW0NkCEiKmVybkyfPT89JW3l5h2RiNmlQ6t581ZuSt1x/jnD4qbpcetfvfd4jwFXc0MbMqgPETGeeO+cMVOI5jmZLz9324WX/KNV14IXHvmLUoIxDQkAobYmbLhdusbtsABAGbqeEkwJhWoIgDVYl81Av98bTE7eU1zesSMBKF3XyyuqFi9ZcvaZI2trw8QIgVumKNpTumTxMkvE27ZtW1FRGUgKxONxn9fbCIQFBYTIHl5SurAC3BpKpewIGBmzzPizfTI7JAOEK5XXUIoSl6wgEaOEeoy/qcVSJBnXVqxay1Fr3755eXllsxbNd2/bsXrVqsqSku5d2rXr0CxSGyciXdOEJTTdeOjBP154xd/3lFY2yUghpWwiEAJDJKKmmZlMoyGndPW7XUJInQMgAMGevcU7du8eOKCvUgqBERAiBJIC23fuklJp/ICkBkDE7KyMXUV7ERGRL1q09PtpMxloS5esXr1q096Svf6AN7dpTkZGemZmk6Z5WVLJZctWRaO1bdq28ft89hnRcexhARCABvDtLnP2NgEuBrL+vAEhGruzs+SWCZEQoVtRnT8lQMWJAIEQiH4zi6UUAWIkGs3KSntr/FcdOrTSDT5jxrybr7t0+LBT73ropeff+CgQ8LkNF+dMWIIApJK9u7S2CL+eOvfqC0dIRVqd0QJFyHH52s0qXNuxbTMisjNoIpGoz+tt1ar55m1biZR9Kdks8vl8cdMMh8PJSYGGaqf926ys9LUbt2zZvvOHqTO3bd06YMApvU/s6XLpmqavXLmmqrqmf7/ecTOmay4pFec8FKoubF6QkZZeVlaanp7ROFwuvxJcxHXOJAEgAQAjECh0RsoyoSYEFAdFwBgCgQA0WN3n9+v2wiNGLETgnAHAkqUr9xSX79y+575HXrhg9NnlZbW1kdoPPpgUro18M2XR3qI98drKZI9n2NCT7QcGk5J7n3jCWx9/f/VFwxFtaQ4JiBgAwLJ1W8Dr6tqhjS1gIuLWLdu2bt0u0bVjV9HQwQyRpEjYOV/AJ4QM1dQkJwX2358lAEtPTwktqXnz7feTff6rrxlTWNC0/mypS5cOM2bM/GnBYsuKd+/W1eUyACBumpUVNWUlS4qLi/v16+vz+eq23WNWRkcGkgD3Z0BC8VUEAIRmXEZiBnGs4wkByZgAUigVj4Q05gEiJGQIYJHmdSEoQPqVButIEEsphciqq6s++WLqgP4nnnJSr6pQ7flnD3v3w28Gj7jypWfvcbs8vU/qfsklo7xub0V19RdfTBv7yHN3P/jsxZeeOeTUUzq2LbzsvIFXXv/gzp3FeXnZcdPiOiJwxpCAFq3cHMjPadU8t85Jp44d2+fk5FRW15aUlz/17Gs3XT/G5TKUEkopl2FYQtSEwpAL9RaLSHGOQljr1m2MRsNdO3c4e+Rwn88npURkiEBEQHDyyX3efuejoUMHeTweAAiHI7t2Fwf8ybk5WS2atzAMgzEEOKYdeSQpGZOKgATQfufqBIACiQMqCUIpCxUBIWiIhASWRESI18g9RTKYDKSAJBCBJUNa0AKOBL+BQMo5B4BgMMXt9f84a0nz/Lxkn0cpcdkFw9/94Gt/0Ktx3qldayBVWlKSmpJ25eVnX3bpyI8+++GPtz172+1P5rVvm5nRhDPjsdc+ePLeG7yGAQCmJXSNF5WUr123tXuP1imBfV6Okio1NZiaGmxReP74Dyc9+tQrF4we0aZFAWPM63YRQWVlRcPgFECS4h9NnLRg8cpe3TteOPpsjWlSqnohFBGVVJqm5zXNra6qzM3JikRjb783oWf3bj17nFD/VGVl5S6X4ff7j+XID4EMJgH0Q5gzDQHAsiwgoYgkARLUubQqaqnBrZs8dXkft8tQSEoSECqlMryGlzGFdFS3QtsqLFu+MjMrJ5Dka9em4IOPJjOGlqmEIo3LUwf0fPHlzwb26RGPx1wu9/yla4JJgV7dO7kMY8ApXTNSPA/ddf/KtRsnfT9HInvppc8nz1vzh/MHX3POoKyMVABYtmZLrGjPCW2HADApJdeAIVuxeo3H7Slolrdp09a4Fd+0becTT/8rJye1besWpin8fv/6jZtOPqlXnbkizvXPJ02eNXtxfrOc888ZVccqPPBQg4hIVlZXR6LRN956r0WL5j17nAB2ZjQy07Q2bNh00kknwjGcJEgEDGHi4qK568s1zqRUnBFjgIxpDIWI3Tikdefs4PfrdwMiEqGiunhPRGJmn5aZt2RnHjIgs/N5j7bFCiQnPf7UC6kZKRq4P580tX+/niNP72dfMtf94fynXzl/2ar1XTq2nj9/kRmHpSvW9O3TPVQbu/bGBx4be8PoUQMBoLa2ZvLMJZ98PWvSrKX33vnqM+98f9OFA66+YOiP85ZCXHRuUQgAiAqIK1J5uU0mfv6V+lFqLo/X57vvrpsrKisXLFi6YsUaKaQ3KbBx666lS1d27dpZWELTtW+mTPtx1k/JSYELzx7pD/illAcf2thXSIsWzb/+ftr8BSt27NjtcflnzpxX2Dw/Iz2trKxi5ao1jNGmTZuysrICgcCxGSRKIgb8k/l7JkzeAn4OQu6T2AkhHhnVPa9pEgMrSlKSBAJEIiAAUygliSguFd9/XQjAD+uMS/vvTC9TShbm5429489JQb+uaUOG9r393qe/+3ZOz95dpJQ+t8sfCNx6/3NTP3nJ7dZra0JffzunqjS0syR08SUjR48aaJpxZJrfHzh/eP/zh/ffWbT3na/nPztu0gP3v/viR9NJRDE3q22rgvoTCMZQSHnqgL45OdlejyfxPgrzTuzWORaL7tixe+bcxRs2b//q2xmZWVm5OVlffvXt9Jk/gYLBA08pbN7skKxSSmmaFqqt/fybqVs2bR4x5LRhpw8oLi4tr6zeNmNOaXF5mzYt27dvHQj4Y9GIy+U6xrNrPDrTPBr3cKE4kqoToVBxQ+dcmDGIhyEuQBEAIyJQCmKWIoWIGiJnR2Zp/+VWqDjnX3/zXb9+J2maFo5GunVqd/01F9099rm9FdUlZVUbN+4I19b8sGT5I8+9e9efLzvhhC4Xnjf89HNu6Naj08VnDY2bpm4YSCRJkSRAyMvJvvuas8acefJjr3/2wrgvgRvMl6RsKiAiIhFkZmZkZmYAkFSCCBAZECGC2+1p3bplVpOs/3vl3ZLSis8nTyssyJ4xdxHjWtv2hQP695bSImBKKUDAhEhBiMg537Bh60uvvr23rOzWv1zfo2sHAGjfrpW9xqlTpjONNy+0yZ0Gx3y+PJESUoJAqQiVTSxCZEpIIEQlIV4LcQGSABAUoZIUs0jKI/s2DpNYieNMJbZsLyqvqN22fU+nDoHNm7d8OmnaCR27rJj3odvtAQBLqq1btr349pd33/pYcpLvhivPcbm0wSP6xyNxpRRDhgQAyACAIwDY51i5WRnP33PtwN7tr7r1/yqqzQdf+7hft7b1e7xSdsUOY8gT9yUS+kiRTA4Ezh05+MOJXxcV7dm7tzgYTDY4nnXGUM5/dqWLFy9/652PkPMnHrwzPz9XSpkQYQEQcdDpA2bOnDP9x5nZTbJ0XcvPz9d1/Tfk1i+9NEkAxpkCpYAIpLKzjm0HEoRA5FwIFo4wjZRUgICKmBBgWqjEMUEsBiSImKYjY1t37flx1tJXn7+vc8eO1aGoy2But8c0Tc41nUPrVs2fe+gv8WjsxqvuFgouHNX/pRfGj3/j/gMq/upPCRnnUikp5FmDTlk6Zus/nv5g2vTV4z6fdtU5g4WUPFEEgYcU0pA4KdG+bSs0fCweTfYaQoGu828mT/F53YFAwOPxuD1uj8vNEAEBEYtL9i5auKxN62YXXXReWmqKEFYdBfe9RL9+J+/atXv16tVdunTWNO23tVi/kNXDmAEAliQABSSAFBAhka1VgbIQSbNiqqrSghhJCUR2OhNEIzJhsRQAPzIR6uGlzRBROBr/adGSQf1PBoBx738+ZeqCD8Y9vHLNxnVrN553znApJefc1tYBUOf8oj+OnTB+cos2zbudUPDRG08IS3CN/+zBFikAVlxe1WX49eUVVpOC7GUTH08L+u3A59Cuq1Saxi0h/nTnM2++/83IESf3bJlrxiNg630IRAoADMPlcxucMYaMMabpXEp1Yq8e3bp1sSyTcz1xug0ARIhYW1vr8/kYY0KIUChkZzD/hsQqL6+oqKzQuAb2aTEC2joDYtyUzfOzH/hy7aPjV2heXSpKmC4iIEWWOfOJUW1zU9fvqdR1lIo4gC3GRC2rW35G0Of/1UfNR9ZiIWI0Fp07b8Gcn5YXF1ekBVMqq6q+njrzpEFXnnvWoHPO7A9gF3UhAmmMKyKl1DvP3ysVffzGF6ed2kMSabompGCc4SFygZEhl0rlZKSeP7Tfy+O+LNq589E3v/jnLZcKJRDZAXIdEUgpdF0vq6i68m9PfzVlnuYPfvHZ1BPvuvr0fn2jcVPjOrNLExnTNE3XOUdknGsa1zj/acHipUuXtmzZPCkpAACKFCliDJGx5StWp6amBAIBKaWmab8tqxQRZ2znzt3zFi7yetyKVP17QQTOeDgcTT/z9PZNUyEeIs0FUiYKyQlQEcSjljQzkrwZSd6f32Txt9wKicjj8vTp1a28JvLqyxO7dWvTuWOLn6a+9e6EKbfe+XzfficW5jMpJedUv8FJUprB3nnxvmgs9vpT71RUhd94+tZgkl9YCjWFhAdn1tmG4/pLh7w9/ruoYbz6/tdjzuzbuVW+kNQw80MRAZGu6wtWrP/D355evb6IJyWJmtp/3HXzrTedp+vGv11ObW141uzZ30+d2qxZYWGzZqmpQeAgpVy6bPny5StPPbVfNBpxuz3HSAKgruuGy63rhiK1TxZF4MiFkJzrIl4JsVrQBUppF/UiAZIkYTIgIjKFOjj0Y+wIL+xwo0IkXdOy01K+/OSZ5KQk+75H7mtpqeig4desX/xpdmaKEJamaXUyAVNSuTQc/8qD50TNiW98sqOo+P2X72mVn1uvTyql9mvTACBNq0OrwkH9On45ZXHE7b3zufFfv3Angqq/sGxDAgAvvPv5HY++GY65uIdrwnrrpb9fOmogKJJS7EvXpv0cMiAgUIi8dZtWK1YtD0fCixYtnTp1RiA5KTsru7KyPCU5cNpp/SwRO6ZySomIlJ3guN+HRYwUKCQG0gKrBkyLpEwcHisAkCAlSYGInMGR0hR+0Qs/zMAEN2/d2bpli+SkJNM0hZSmkNG4+djYP3fq0ur8MXcopXTdEEoJKRUpJZUiklIFfO4pnzw38vJRC+etG3zZ3TMWr62sqqoJ1wISt/emuh9d44ZhMMb/+sfRHCzNa3zz3U+TZizmnAsplSSSUtO0PaXVF/zpoZtufz4KLkTTr6nPx429dNRAYVkEwGxfChMeVT0QEy4WAHk87rTUdLfLP+aKSy69ZHS3rp0j4UgkHBt11pmFzfJbt2zt8/mPKm8OAVX3U1ft1AD2aQsBEXFkAqRksQiPx7gZ1+IRHgszM8zMKDOrFcmjtpDDtFiImJWZ/sHHnw4dPLB1q+aWGTcMF2gcAG658bJzh19z7qV3PnTftR3btjzggbt275m7eJ3iXE9P314UPv3K+3Oy0ryGnuxzJfs9KQFvMNnn97n8hotxhohuDWriyhNMDcdNQO2ep94c2KuD4TI4YwBswqdT73z8rW3bdhkZWWZNKDvN9+m/HurTta1lmZqmHxDc/ZxuAgAFBfnTps1xuYzc3Ca5uU169+q+fPnqDz/8pGvXLjk5TZICR49YvxT01R8S2NyqW5q9iTFEDYG4FotFVWmRaQVAKgBVl/PCwIwpoeAIulH/C2KVlJSUlIeqatXYB1966dl7UlOD0Wjky8kz/+/V8QsXryzo3OaL76Z/8fk3J5/a+8pLRp3ev3tVqHbGvGVTflw066e1Vdv3AAD4veDmZsy1bW8pSAEEwDhwDgwBCSQBKVAEygTGwJ/CNGBu14rlW+97ccKTt46Zu2jF4y98+OWkH8Hj1lMCZmVZXk7wq3ef7ty2wBJxTXP9h1Xz9qec27RJSUnZ6tVrOnRob1kWY9ClS4facG1ZWYmUZru27Y5O6Y5Sqry8nJQd9tA+JxIAEYQlgsFkj9ttCaGZJtWlWtgeJwGaVjwWF3nJesf2WW5/QCppmzhkSATSEule4z+52H4buYGIGOK0mbO37SpuUVi4YOHKadPnJ6ckLVyyPm7Gzxjad/RZg3p07lBSWTnxyx9eGvfZjs07UvNyKorLoaIEjCR3TnqHNgUndGrZpX3Ldq1bM4ZbtmxfsXbbum17N+3Yu2dPcaw2DKYADqBroLl0Q2cAIIUAUFxj3KXi0ckfPL5k/oK7/vqMq2W+VJaMi+xk73efPt+pTaFl2Y7dr1kOY9Wh0OxZ8+Nm7KQ+vbOzM6WUiLhu3brWrVtpmn50TgYRIRY3v/56cjgSZZwnYjRKKKKMQzgc6dG9W/OCZu+N/4hzRiqRGoN1iQfhSO3w4ad37NBeHkKMImWfDB4tHJaORYQNruA5i1YMO/tPLz551+hzBrkM44AI+e7HXnvsnmf6Dus/bOBJ3bq06NC2ZZOsNM4PzuuAULhm5+7StRu3r9tYtHzNxvWbdhSVVJSXlkFcAnHwudHtAg4gISMzuOCzZ2+5958TJ0wxmmRbobJPxj15zvB+ccs0NP0wtvWa2tqysvLMzIwFCxae2Kunx+0GRNM0icgwjKPjtiNCLB6fPPn72kgEuZ1Hi3X6PwCDaCTSresJBU2bvvfuR0xDpVQi58pOiQQMh2vOPHNIxw4dDpG+cdShHd5nYNf2xyyrtKTi4Qdff++VR88c0ZcITCEQkSEISyGq6prwhLc+OXVo328/f9HYZ0jIEsI29/XhmsZYki/QoXWgQ+vmdWf1am9x2Y5dJes3bd+6Y/c7n3y/bWspJvmZwUt27Dn3xse/fv3uXTuKfpq3zp2V0rZlU6VIY4ejGhOR3+fzeD0a4yee2JMBswNJl8t1tE8GCaRMHBsnGoYB2jeR6lIXFZlWnBOTiLY3b6dnM2RCiJ9peJi4E49xYtkr/HHmnE0bd3z61ZzLLh1+5oi+ZtzUdV1nTCrJGecuHQCuuvnvNTXV77/9mKFppmkhR0RkwDTOD1o1KKVUoqkfACLnLDc7Mzc7s0+PjgAwYkjf00b8KRqPgDK0QNLiWUuvv+v5T999btgFf1kxe/H6LTvatSqUEg7bF+KMKVJejxf27wV3RG3Sf/LNkiJipLDuvLLubrStmkQVtyyutMRGCaTAVkNYXAhpN6M7FIvw2LdYiKhIndjrhHZtW++prD1n5OlKSV3ThBRcQ03ThbR+nLHgxTcmTPrgk3+990qT9DTLsnRd+2UfGhE4YL13QAAJaYtAStmrS7uHHrj+r39+QstIlfGYluL77JNpbl2f+smTp5z+h7c//OLsoQP+K/NPgP/LzGOllGVZ0JAuDYhGkKhKgno1AbDBX9kFdcg4U5LKyis557YYp+zEagAEDEdqTTN+9I3TEZUbAH3ewOLFq8ZcdIbHrRORJcT7H34ZCodXr9s9d85yAtGt9wnZbVp1aN2UiPDXf+c21+y8M86ZEPLmP5z/zZS530+eo6enW3HTler/4KOpcRH/fOIrDz3y7Pot29oUFqhjL1nKjg/Ky8vnzp3LuN5Q22xQR0Sc8cGnn8YYKy8r1w3jwDMuxiLRSCQcCTZPuuiCc5mG9lEYAdRbLLJki8L8Y0TLPXwdi0j269sHAIgkANM07crLzpu7ZN2Ejx9+/MEbTh94EoE6oe+SJjmZiSvwv91IAIFeefK23ks3loUi3OOKC2kE3Z9+OrOoqOzxu65LCyZLUoqAI8Njr0OfUmSaFtfAls0PIp9iyDjjRBCORN1KNugcbVd783A4HItEXS6jV88T/q2j8puv97+RZ5jdAsBORIzHrM+/nHLLLf947vG7Rgztp+val5PnlOwtTUkJ1jmh/xU441Kq5vm5rz1zO5hRJMaVZZpSS/bOX7hh1DX3f/XDfM64zrkUQtHRtkn/FoCITEM7j4zvOxDgnHHOOOeMIRJIW30iUEpJqZSdZaaUUEoKZZPMsiz5M/gft3g5SsRKeAN2vu/sOXO9fvc1fzg3Fg8BwNzFy2bNnNuvd+eVy9fbKsp///VxrlnCPGtE/3v+fqUoKeLAkKQwLd3Lq2pqr7z5iZFX37ty01Zd1zgjKeXRCejsLt+/AM45oq1IqV9y5O3Gb0BKKimUnS6l7KQ9uxyr7nL5hdc6dtyAI1T+RXTyyX28Xvf0mXO8Xs+e4tLx4z97aOytS5YuW79uw0l9uhL99xlkCoBxrlnSeuDvf9y1q2TcmxONjFQhpUU6Y8j83q++mjt97orbrxl1/ZXnpAeDAGBKwQhZ4uz+f+LUmqZZWlra8KC6PuS37bRSyu12SSUBGDJMsIvQLkSuj/fsNgq1teHS0nKfv67cLdGsihjjkXA4GrPgOMER64+FiFIqyzLdbvfSVWvSgsH8pjnV1aGK8spmzfNIEeKRORUhIgCSwMbccN/4f32mZWYoRgo0QNQ0LgRBRDRvlXf1ZUPGnH1ak7p6JiEtJDs7hB8pD8z2yquqqqZPn76/BcOGwaaS0u/39Tnp5EmTpoRqQ1zjRFRXn5zQQIGIAV508eit27YX7SnmmpZoXqUSZooxFEI2LyxsXtj0uGgkcYQbr9lNf+q6ytolMUgggNiRsxZISjIkhdqt9z39zNPjwe3X/JpUAMSQMTR0acYhZqXlZZ45+KSLhvXu06uLv76kh5SQREDYIKY4vO+pnlhz5syxn8HO5DxgoSSU1+c5pW/f8eMnFpeWGYbRoEqbEpGdkm7duPyKiwI+739wXR0HOMLdZhKflCIChcjshjiI2hFspI5EwLgCiST/+Y9bunZsc9s9zxXvKmdpQcZRSgkxoWmcBXzlZeFx474YN/7rFi1zB5/SY3Cfbp07tGiRn6EdlBKt1KFjtYZGhfZpUAj11bAEikgS2Wp9osMBQuJviRgCkbKNtZRKSmlX8NV7twQSAKSUSteYnZcm1SGvQVvrOl6a3vxvGq8hILAGluBIXmRU1+aIAKSQl40+o1/vrnc//OL7E39QccKAl+tcKksoYoyxgE8i27x57+Y1n77y5qRAenLrgpxObZt3apfXujC3VUGT9GDA5/O6deOw9+nkgMfv1gE5IAJIRWSXHQEhESKQ5JahawyZUEoIZSfWEioAUFIRoZRWLB4FCWjroEc8m7MRbIVHH3YNBQD8OGfJMy++/dWUeRQ2wZfEvQZjmrLbOjF7PBMXUoGwQJhABIZH97oz05PTg4HkJF8w2ZfsdyX5vEk+n9vt0g1D41pig2OSI+OMIQJD0BgyBESGDDXGEKiqshyEklISKVICAbimcc4YA64zjpidnjZ8+PDX33p/1849uq4JIYWSAKBxzjkPBLwpKcH83CZ9+/bRuAaNAsf9MjhnUilQ8tSTu516crd5C5a9OX7Stz8u3LWtSAoAtxdcBtO5fRqpIzEdwfAqYIrIilu7d5bs3rYXlASlgLCB/ILAONRbXK4h40wDg4NLYzpXuq65XIbXZfhcWsDjMjSm68wwdJfODV3TNc3QNY0j58iQVFwgopISkZIC/uTk5Iy0YFpaMCUlLTU12T4CBwAFskEijGOxjgmQUlQ/OK6yqnLG3BXfTJ2/YMna9Vu2xWqjYApABpyDZoDGgXNmMIbIgAFHAMaAIWOEQCxRUkWs7tAOUefMQNQ0Xeegc2Bc5wgaB0PTDY4ak7rGNM5cuuZxGT6v2+c1/D5PWjA5mJqUkuwvyM3t0aNb8d5irrFgcvJBJzZg+3iNqRN4oyHWft9Qfa6fEOb2nSVrN2xZu3nHxvU7Nm/buWtveUUoFKoJm9EYWARke+IqYaVs+4SYYCEyYAyQ2VzUNG4YzOPSA24jEPAlBbypSZ5gsi8tmJSZkpyRmpKelpqSEkhJSUpNDQZ8Xo/hMlx6fVjT8GQw8bH/d2GpQ6yjbr6IpCIA0uoEoQZ6ZrysorqyqrqqKlxUXB6qqY3FY6FQJB6VipQlLFnHAARyu90ut0vXmM/ndbldyUn+pIDX53Un+d0+j9fv9/p8Xo/L+AVSKCJSZJu9+uQF+B2gcRKrIcPIbo5K9shW5Iwf+ZewG6TukyfqmInwu52J2MiJdSgeJOS2huOm6RckEfyZfyUsjzNP0yGWg6MIZ/i2A4dYDo4faI1mJYd3OPvLHtIv+V6H9YQOsY4zUtn1Bvuc7f/4gSrRYkMxzhg0fAZCYsgk2EV9vyJGBCUUICFnBwWFJAlQScJ9J9WNdTxiY3DeEUiBjJsqkaNpZyD8TH7JvrsRNGRuj7v+V1JKxnjDpAZTSCGVIntSJO5ryk8HRI315gq9dU+o7My+/Tt5HTIpjRrjrPPj3mIpRZyz1eu2nXv53xgaiGD3+EFbVgCEuoxeqqv+JCVtEjCuJyd5W7bIHjLwlNGjBnncHksJDbltypDjH//88OzZizWfR0kiOFRWjaKGezAiCwTcnToUXHj+iKH9T9p/UBQxxp55+b3Fy9causu0RNyMS6leeOL2nKyM430IVCO0WEopzvmSFWu797sM0Egczti5K4wDqEPl29s2zZ7XLsECkPHO3Vq/9tIDJ3btoKRChkpJzrUBZ94w47v5EPSAVA0e2DAFlfaVcxOClCABhAk6XXXVhS8+/ldd04EhAtrvs+8Z183+ehokBUESKAK3tmnxJy0Kmx4LRfGOxToEdK5pXr/dk8ieTafMOMQjdu3w/n613fsVQdOZ14WMIQGywIoV20ec9ccfv327Y9vmUgrbY7OUCWYMogiS9gui60lADTZHTsznBmCM+RDZv557Ozsr8NCdN0phYV0yTLI/wJODRnKSVFJJ8riYzjk0RjQSYkklhZSM8UQKq2m2ap7buV2BRayuqgGlUnblJ5JiDCurw3N/WmTFNdQNkqaRGizfW3rnQ89Pev8ZhqRAA6LBp/RMcrl1r27PkLZbU0H9QC2bxICAwBWUlVfMWbwW0KVIcgY8Lf3dCVNuu3FMst9X36pQKCUtkSjUkiQFqcboYDUeYjXs0M0Yk+Gac0ee8ujYv/zyo6ZMX3DhmDuropJxVJaJwcD0uSu27SwuzMu2syTuv+PaX/U2zrvqjokf/6gH/FIpxVlJSVnRnuLk1i1oP3+j/p1i4+TUfrb9eF+GXVK37+gPI5G4lDIWN4WQP/MjTh/Qa+SI/lQb4ahLAGQ8HIpv2brDtkWATEr58w9PPIllCdO0asNRIurdrQtIQpbwxkwlpJD7XwAIyPYpGo6Oday78KTIHjhLgAiAyDXOOVdEnB/64hFCWEJkZaaBkJg4VmZI0jRj9b7Tz4lMdjIMETGGdmK0YegAMHv+IuCYeCfAdMNlz9T8uaTQY6F7h0OsX94KG26GCICMc7vypr4LAu6bgQxAoGkaIq7fuB10roDsJC7gWiCQBAcmLdilRyBIIYDGkTNeb+traiOr1m6ev2j5F1/PnjF/FfN7pVC6rqna2tYdWufnNSWl6pOxGkHO8e+LWIwzxlBRoqIYEN2Gzhga7Gcb/MXj5vhPv5nyw0/M7yEpEREkJaf4WzbPBwDWwEkQihgC59yARLvPXXuKN2zZNXf+8sXL1y5btXHbznKojYCucb8XiJjG4tEIqNj9t13lMjQhJOeJLo2JSulEEECNOOemkRCLEmWBiZJ28Pne+3jK/AUrTAX2aAZ782KMcY5ECIjFFTXr16wH3Y8aMVJc95ilRedeOiQ7I9WSgtultgRAylYEtmzbNWfB8rmLVi1cumHbjr3lpWUQiwNycLk1t0vPTFNKxU0TInEZj2bkpj36f/ecM6y/lJI12IuxfpIZ1P23kXKrsRCrgS5ORKhp24tKt28rASRQsn43AykBOSAHVMA5d/sYgkISFkDpnl79uz92742kJCBDJFDIGAHwL7+b8fKbH8/8aX2ktAJAgcsFuqb7vDzgV6DMuBDRiKgyAcFISerUu8MZp5/8h4vOyG+aJaVCxhtOPABytsLjy8fCg9xjQSAkIABZ9ugL4LoeTFaJMchIRIpAhkLAMT0r/bzLhj889qbUoF8ppSGSIiSKxM0bb3183FtfACJ4A0YwyDUmpLBiMasiagkCjXtTAy3b5HXt3K53jw4DTu7WtmWBTSN7VtkBDjrtUxuwcSdCNKa0mcTsJkQkSxS2bNKlbTPL4kpJItA0XlJavmD+chZIViphQgy0br7tysGnnti+TbPc7EwAUFImdisC5OzOB14c98JELTcbSColTcuEyjD43Pl5mZ3bN+/WuW2Xji07tmvVoqBpfeypSCkpEdkhJ97a5zYHjphyiHVsyw2JgxbGmKgNX3LWJQ/edf0BGsGYG8a+++YkPT1TChMZM6NqyaJl991+tc/rMU1T03S7Oa4i4pxv273nzbcm88wUklECrqQM+t0333LFsEF92rXITQ4GG9ghZQkBdm8FhvsLHLS/KPp7QaPZChkyTlDXJBIpHotJKYUQGueAjJRiHMc9/0DclB+9O9lIT7GEydzuH75f1GfwJZM/fT03K00Ik2l6fc/+LZt310bizDCQFGNc1UYfeepv119+th3XxU3TjhZYg75FBESSCOu2OrKnau2bnEd1U2/s5nz1klfjA2ssxELG9u/EwpAn2jAyxpBrnAAZqnde/sd5F51ullVwzQNS8vSMlcu3jzj3T9uL9mqarixVb2XMeByUsuVWIgKdd2pTUO8fuQzD7TLchmHous41XdN0TdO4pmmazjWdaxrnXOPI2H75NnaUUZ/Ig41WcNAa0Vqw7lKhem9mv2sImSJpaGz8Gw/HTTHp02l6elCaMT05efniTcNGXffNZy83a9pECGFfb5IamBkE0IwHnnirsPBbJZnGQCWmUyfigPpWRywxFJ0kUbS2+m83XN6zawcp1UGbo92pjxqrYtpYfCx7HpadJYMsMYp8P8IBADHUlFIa5x/+69HzxG3ffDVTT02Wlmmkpq5ds3vYWdd+8fFLrQvzzLgJmgEckBEiAxIIwDQ+9YeFYIn9YtH6mG/feNI6i8QQaivPGj64Z9eORNCgCpEA7DxEIGq08kMj2QpJSWFa0hQiLqyYpLiQ8tBj2Rljisjj4R++9cSQYadYJdVKMTNSDV73upW7Tx167bLVG+yGC6QUmaawpBRSWFKYFugG+Hzg84HXB14feLzg8ybu8fnA1/B//ejzgzfA958YJRSBQgWoAIFQQqNFI7FYLl3LyUolJQmQcYx70D7yO2Q4xpAJJfxe45N3njz/ijsWLd2gGz4hlZ4RrKkOX3HtPR+/9WTrVgW6pmdkpem6W4G0zx+JEuP/pJ39jHWjvu1EUoK67pOIDIHI1IXP49rvpaUJIDgIICmUNEBrrOFiI6mEllJVhSKgpO2zSEV+n9fndf2iQkGcMamorLwSAZXtJzEejcSSAp6UYJJpWdU1YSQgRfYIknqXiBKbGB48sKbuHyACSZCaEjAazHrZuWtvbSSqcW4PdGEMm+Xn2F1JHWIdo1HhoSXTf6epsp85rTuC8x1ov2qLw3mfDrF+UzfroK/nP2EGHVSTajvhDbsaH0HG1w3S2Xf+5NQVOnDQ6Jz3AxqjH3xbqXoFe5+NOKCJXv2j6oJ/RIR92TZ2zViDDmkHPN1+z9Awq3Df09K/HUf1bxfynz+VY7GOmAvVYDSBqv/cD3aG7Bq9Q35/B/T5PKQjdcCdVJehhz/zkEM+7eEtpG7QF2sEvtdxQSwqKi4JJiX7PO7SygqP2+X3+okoVFMTi0YzMzMikVhJSaklJGMsr2mOy2UQUTxuVtWEMtNSEVksHquuDmVlpCPjtZHY9u3bNU3LyW7i97vLK8rLKkJuwwBFUTOenpaakZ5ctLcsFjORiGt6Xl4TBJJSFZeWp6WmGjovLiuvrQnb530ulys/N4sxrbKqeveu3Ybb3TQ3x+N2/Zy5KikpC6YEXIarpLg8kOz1erxEVFVVjYwlJSXZBfnbt++uqq5OSUnOzW1y/HZ8P+a3QiQE9uhjz116yejePbtO+PCLVSs3PPXEPQG/f+oPs1avXj32ntuXLl/97Iuvd+rUTghZXVl18YXn9u7Zdf26jR9M/OLh++9kDNev3/ze+xOfenzs1q3bX37tnaSUJCllciDw5xuuXrZ0zfQZc8urayxlJScFBp/Wf/CAkx999AWP3xNMCVZUVjfJyrj5+isty3riqRdvvvGa5s3yXn/9rb0lVVlZWXHTbNok47prLluxcu24dz/KSE+PxeNtWxVcfOG5B5TM2yYtbppPPPX8tVdf0bZty5fefLuqMvLkw3/XdeODj77web1XXDY6FKp98ZU3yypC6Rnp4UjttVddlp+TdZxW3x8PPhaBGa+bEUe4t7T0n8+9et/dt3CNS+QAYMVjzXKz77vjrwAwbfaC1958r3vXTgogHLEUEQcQUsUFAeKSpcvLK0L33PW3pIAPlAKSp5160qBB/V97422pxPXXXgUANTUhpcSNN1yVn5MdicZuuOmuXbuK8gpyLZmoLbXi6twzB586oL8lLM45Ilu4ZKVh8JtvvNLv9dp72s9RIWpJW23XuWvzljX/fP61O265SQgRjZsA8P6Hn5dVVD90/+0et8syLThmplo2UmIh6AZnjANANBq+6KKRu3aUvvHmhLz8LGX3ZUAOTFNKAtCAPt0mTPi4urJaNzhyIrKkBK5xl09Tik49rd+2HUX33v+Iy3D3PrHXqJGD7V4PUoG0K/FJITLdcL//zofJwWBNNNakSUZmVpqwTF5XC28YrgkTv/lh5vxoJHr9NZe3atVixLCBRXuLbrnjQZ/He+YZgwf07a2UpESvmYZ2C0gpRAUA4Zrqa66+aNWKtR98/LnX71OWBQDbdu7q17eXx+2KxeMuw0BEUlRX0eYQ64jbKwBN0xgyAGBM10D7y01X3T32kXnzFrVt18LeLjWdbOatWbc5Gov6/T4s45FwhDE352AKgQoBKTUYvOUv1wHAth1F9z/8REGznO4ndAIAIpXogIRAoAyD9+zZtSpU/d2Eic8/9bDP66utrdV4osORJcxzRw077bR+Vizu9XsBZHZm6r1//wsQLF+x9oWX3mzTunmTrMyDHXA7CcKuYbQAPIb79r9df+Ot94aqw2cOHwQAWRnpy1esHTViiNvlAgAlFeOJ6tbjzpHXjgN7BRCO1phWHABi8Vgkamqc3X7rjX/+69h4PAYAnOGGddtefPmdeDyyZt36888+0+1xFzbLy0xNuee+R1oW5i9YvGLo4EEM2YKFSyd9+W1BYdNIVCT7kzPT0+29xrRiVJ8DAxSNRzt0bNskK7OsrOrVN8bfd/efkWEkElYkAcAU1rfTZm7duduMxwL+wJjLzp85a9606fPyC7JLyqsysrOTAgEievu9j04+pXerwoL6aV4EKmZGbIrIuBWJhHVdv/1vN97459uj8RgAjD73jCefeH7sA082aZq9Z0/JtX+4RNP5u+99fMO1V3p9nuPL2ToOokJEWLRsZUFe0/TUlDXrNgf8vrym2Yi4a29xqCrUvm3LisrK1Ws3WaYARq1aFObl5pBUyCEaM2fPW1xVWdm6dYsuHdsRiWjUWr1m/fbduw3dOLH7CVlZGUopxtimrdsAqGVhMyIQ0lq7fmuz/By/z2MJuXDJiq6dOng87sXLV7dt3Tzg86xZt2VvcSmRUlK43K6TeneLRs3Vazfs2VPq8rj79OqakpwUi1tjH3js5puubdokixTZ54dCihWr1rZsWZjk9y9ftSYzIyM7Mx0Rt2zdgUiFzQoAIBKNLly4rKq6Kj09o2f3LtG4uXLVuhO7d9H046wpzfGkY9kkOEA6OoSOpRRDhP2PU4gUwIGSY70N+Dmh8pDq6ME61sH3xONW0e7dzVsU7qe11g0U2F+tpYMXdUipwiHWkUe9kHhIwbpeWgSAhoJ1g/uxPqG0fr0H/GVDStUzuOHtA2hd/97qf1tvXxEB7baAB7GhwbMl5qAccLvhkx/wug6xHFCiGg1/v93ONYcF/5uA4/c+CsUZIODAIZYDh1gOHGI5cOAQy4FDLAcOsRw4cIjlwCGWA4dYDhw4xHLgEMuBQywHDhxiOXCI5cAhlgMHDrEcOMRy4BDLgQOHWA4cYjlwiOXAgUMsBw6xHDjEcuDAIZYDh1gOHGI5cOAQy4FDLAcOsRw4cIjlwCGWA4dYDhw4xHLgEMuBQywHDhxiOXCI5cAhlgMHDrEcOMRy4BDLgQOHWA4cYjlwiOXAgUMsBw6xHDjEcuDAIZYDh1gOHGI5cOAQy4FDLAcOsRw4+Df4f4G9HXV81UHYAAAAAElFTkSuQmCC";
 
-const PAGES = ["Home", "Services", "About", "Contact", "Privacy Policy", "Terms of Service"];
+const PAGES = ["Home", "Services", "About", "Contact", "Privacy Policy", "Terms of Service", "Refund and Fulfillment Policy"];
 const NAV_PAGES = ["Home", "Services", "About", "Contact"];
-const FOOTER_LEGAL = ["Privacy Policy", "Terms of Service"];
+const FOOTER_LEGAL = ["Privacy Policy", "Terms of Service", "Refund and Fulfillment Policy"];
 
 // Detail page content for each deliverable in the Competitor Intelligence Brief
 const DELIVERABLES = [
@@ -148,41 +148,6 @@ const PROCESS_STEPS = [
     whatNext: "After delivery, you review the brief and use it to inform your decisions. If the engagement surfaces a need for ongoing monitoring, we can discuss a recurring engagement. If revisions within the original scope are needed, we address them promptly.",
   },
 ];
-
-// ─── Pathname Routing ───
-const ROUTE_MAP = {
-  "/": "Home",
-  "/services": "Services",
-  "/about": "About",
-  "/contact": "Contact",
-  "/privacy": "Privacy Policy",
-  "/terms": "Terms of Service",
-  "/services/deliverables": "FullServices",
-  "/services/process": "FullProcess",
-};
-
-function pageToPath(page) {
-  for (const [path, name] of Object.entries(ROUTE_MAP)) {
-    if (name === page) return path;
-  }
-  if (page.startsWith("detail:")) return "/services/deliverables/" + page.replace("detail:", "");
-  if (page.startsWith("step:")) return "/services/process/" + page.replace("step:", "");
-  return "/";
-}
-
-function pathToPage(pathname) {
-  const path = pathname || "/";
-  if (ROUTE_MAP[path]) return ROUTE_MAP[path];
-  if (path.startsWith("/services/deliverables/")) {
-    const slug = path.replace("/services/deliverables/", "");
-    if (DELIVERABLES.find((d) => d.key === "detail:" + slug)) return "detail:" + slug;
-  }
-  if (path.startsWith("/services/process/")) {
-    const slug = path.replace("/services/process/", "");
-    if (PROCESS_STEPS.find((s) => s.key === "step:" + slug)) return "step:" + slug;
-  }
-  return "Home";
-}
 
 // Color palette derived from the EchoStack Media logo
 // Deep navy base, bright blue accents, ice blue highlights, silver text
@@ -322,7 +287,6 @@ function HomePage({ navigate }) {
 
 function ServicesPage({ navigate }) {
   const [hoveredItem, setHoveredItem] = useState(null);
-  const [hoveredStep, setHoveredStep] = useState(null);
 
   return (
     <section style={styles.section}>
@@ -338,7 +302,7 @@ function ServicesPage({ navigate }) {
         <FadeIn delay={200}>
           <div style={styles.card}>
             <h2 style={styles.cardTitle}>What You Get</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
               {DELIVERABLES.map((d, i) => (
                 <div
                   key={d.key}
@@ -349,63 +313,44 @@ function ServicesPage({ navigate }) {
                   onMouseEnter={() => setHoveredItem(i)}
                   onMouseLeave={() => setHoveredItem(null)}
                   style={{
-                    padding: "0.85rem 1rem",
+                    padding: "0.9rem 1rem",
                     borderRadius: "8px",
                     cursor: "pointer",
                     background: hoveredItem === i ? palette.accentSubtle : "transparent",
                     border: `1px solid ${hoveredItem === i ? palette.borderLight : "transparent"}`,
                     transition: "background 0.2s, border-color 0.2s",
-                    display: "grid",
-                    gridTemplateColumns: "1fr auto",
-                    alignItems: "baseline",
-                    gap: "1.5rem",
-                    borderBottom: i < DELIVERABLES.length - 1 && hoveredItem !== i ? `1px solid ${palette.border}22` : "1px solid transparent",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "space-between",
+                    gap: "1rem",
                   }}
                 >
-                  <div style={{ lineHeight: 1.7 }}>
+                  <div style={{ flex: 1 }}>
                     <span style={{
                       color: hoveredItem === i ? palette.white : palette.accentLight,
                       fontWeight: 600,
                       fontSize: "0.95rem",
                       transition: "color 0.2s",
                     }}>
-                      {d.title}
-                    </span>
-                    <span style={{ color: palette.text, fontSize: "0.93rem", marginLeft: "0.5rem" }}>
+                      {d.title}:
+                    </span>{" "}
+                    <span style={{ color: palette.text, lineHeight: 1.7, fontSize: "0.95rem" }}>
                       {d.blurb}
                     </span>
                   </div>
                   <span style={{
                     color: hoveredItem === i ? palette.accentLight : palette.textMuted,
-                    fontSize: "0.76rem",
+                    fontSize: "0.78rem",
                     fontFamily: font.mono,
                     whiteSpace: "nowrap",
-                    opacity: hoveredItem === i ? 1 : 0.4,
+                    marginTop: "2px",
+                    opacity: hoveredItem === i ? 1 : 0.5,
                     transition: "opacity 0.2s, color 0.2s",
                   }}>
                     Learn more &rarr;
                   </span>
                 </div>
               ))}
-            </div>
-            <div style={{ textAlign: "center", marginTop: "1rem" }}>
-              <button
-                onClick={() => navigate("FullServices")}
-                style={{
-                  background: "none",
-                  border: "none",
-                  color: palette.textMuted,
-                  fontFamily: font.mono,
-                  fontSize: "0.76rem",
-                  cursor: "pointer",
-                  padding: "0.4rem 0",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => { e.target.style.color = palette.accentLight; }}
-                onMouseLeave={(e) => { e.target.style.color = palette.textMuted; }}
-              >
-                View full deliverables breakdown &rarr;
-              </button>
             </div>
           </div>
         </FadeIn>
@@ -424,70 +369,61 @@ function ServicesPage({ navigate }) {
         <FadeIn delay={500}>
           <div style={styles.card}>
             <h2 style={styles.cardTitle}>How It Works</h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
-              {PROCESS_STEPS.map((s, i) => {
-                const isHov = hoveredStep === i;
-                return (
-                  <div
-                    key={s.key}
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => navigate(s.key)}
-                    onKeyDown={(e) => { if (e.key === "Enter") navigate(s.key); }}
-                    onMouseEnter={() => setHoveredStep(i)}
-                    onMouseLeave={() => setHoveredStep(null)}
-                    style={{
-                      padding: "0.85rem 1rem",
-                      borderRadius: "8px",
-                      cursor: "pointer",
-                      background: isHov ? palette.accentSubtle : "transparent",
-                      border: `1px solid ${isHov ? palette.borderLight : "transparent"}`,
-                      transition: "background 0.2s, border-color 0.2s",
-                      display: "grid",
-                      gridTemplateColumns: "2.2rem 1fr auto",
-                      alignItems: "baseline",
-                      gap: "0.75rem",
-                      borderBottom: i < PROCESS_STEPS.length - 1 && !isHov ? `1px solid ${palette.border}22` : "1px solid transparent",
-                    }}
-                  >
+            <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+              {PROCESS_STEPS.map((s, i) => (
+                <div
+                  key={s.key}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => navigate(s.key)}
+                  onKeyDown={(e) => { if (e.key === "Enter") navigate(s.key); }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = palette.accentSubtle; e.currentTarget.style.borderColor = palette.borderLight; e.currentTarget.querySelector(".hw-arrow").style.opacity = "1"; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.borderColor = "transparent"; e.currentTarget.querySelector(".hw-arrow").style.opacity = "0.5"; }}
+                  style={{
+                    padding: "0.9rem 1rem",
+                    borderRadius: "8px",
+                    cursor: "pointer",
+                    background: "transparent",
+                    border: "1px solid transparent",
+                    transition: "background 0.2s, border-color 0.2s",
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "space-between",
+                    gap: "1rem",
+                  }}
+                >
+                  <div style={{ flex: 1 }}>
                     <span style={{
                       fontFamily: font.mono,
-                      fontSize: "0.82rem",
-                      fontWeight: 700,
-                      color: isHov ? palette.accentLight : palette.accent,
-                      background: isHov ? palette.accentGlow : `${palette.accent}12`,
-                      borderRadius: "6px",
-                      width: "2.2rem",
-                      height: "2.2rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      transition: "color 0.2s, background 0.2s",
-                      flexShrink: 0,
+                      fontSize: "0.68rem",
+                      color: palette.textMuted,
+                      marginRight: "0.5rem",
                     }}>
-                      {i + 1}
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                    <div style={{ lineHeight: 1.7 }}>
-                      <strong style={{ color: isHov ? palette.white : palette.accentLight, fontSize: "0.95rem", transition: "color 0.2s" }}>
-                        {s.title}
-                      </strong>
-                      <span style={{ color: palette.text, fontSize: "0.93rem", marginLeft: "0.5rem" }}>
-                        {s.blurb}
-                      </span>
-                    </div>
-                    <span style={{
-                      color: isHov ? palette.accentLight : palette.textMuted,
-                      fontSize: "0.76rem",
-                      fontFamily: font.mono,
-                      whiteSpace: "nowrap",
-                      opacity: isHov ? 1 : 0.4,
-                      transition: "opacity 0.2s, color 0.2s",
-                    }}>
-                      Learn more &rarr;
+                    <strong style={{ color: palette.accentLight, fontSize: "0.95rem" }}>
+                      {s.title}
+                    </strong>{" "}
+                    <span style={{ color: palette.text, lineHeight: 1.7, fontSize: "0.95rem" }}>
+                      {s.blurb}
                     </span>
                   </div>
-                );
-              })}
+                  <span
+                    className="hw-arrow"
+                    style={{
+                      color: palette.textMuted,
+                      fontSize: "0.78rem",
+                      fontFamily: font.mono,
+                      whiteSpace: "nowrap",
+                      marginTop: "2px",
+                      opacity: 0.5,
+                      transition: "opacity 0.2s, color 0.2s",
+                    }}
+                  >
+                    Learn more &rarr;
+                  </span>
+                </div>
+              ))}
             </div>
             <div style={{ textAlign: "center", marginTop: "1rem" }}>
               <button
@@ -532,7 +468,7 @@ function DeliverableDetailPage({ deliverable, navigate }) {
   const d = deliverable;
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "820px" }}>
+      <div style={{ ...styles.container, maxWidth: "760px" }}>
         <FadeIn delay={80}>
           <button
             onClick={() => navigate("Services")}
@@ -639,7 +575,7 @@ function ProcessStepDetailPage({ step, navigate }) {
   const s = step;
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "820px" }}>
+      <div style={{ ...styles.container, maxWidth: "760px" }}>
         <FadeIn delay={80}>
           <button
             onClick={() => navigate("Services")}
@@ -779,7 +715,7 @@ function FullProcessPage({ navigate }) {
     }
   };
 
-  const sideNavWidth = 250;
+  const sideNavWidth = 220;
 
   return (
     <section style={{ padding: "2.5rem 0 4rem", position: "relative" }}>
@@ -847,11 +783,11 @@ function FullProcessPage({ navigate }) {
       </div>
 
       <div style={{
-        maxWidth: "1340px",
+        maxWidth: "1140px",
         margin: "0 auto",
-        padding: "0 2.5rem",
+        padding: "0 1.5rem",
         display: "flex",
-        gap: "3rem",
+        gap: "2.5rem",
         alignItems: "flex-start",
       }}>
         {/* Desktop sticky sidebar */}
@@ -885,9 +821,7 @@ function FullProcessPage({ navigate }) {
                 key={s.key}
                 onClick={() => scrollTo(s.key)}
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.55rem",
+                  display: "block",
                   width: "100%",
                   background: isActive ? palette.accentSubtle : "transparent",
                   border: "none",
@@ -897,7 +831,7 @@ function FullProcessPage({ navigate }) {
                   fontFamily: font.body,
                   fontSize: "0.82rem",
                   fontWeight: isActive ? 600 : 400,
-                  padding: "0.55rem 0.65rem 0.55rem 0.6rem",
+                  padding: "0.5rem 0.65rem 0.5rem 0.75rem",
                   marginBottom: "2px",
                   cursor: "pointer",
                   textAlign: "left",
@@ -907,24 +841,10 @@ function FullProcessPage({ navigate }) {
                 onMouseEnter={(e) => { if (!isActive) e.target.style.color = palette.white; }}
                 onMouseLeave={(e) => { if (!isActive) e.target.style.color = palette.textMuted; }}
               >
-                <span style={{
-                  fontFamily: font.mono,
-                  fontSize: "0.7rem",
-                  fontWeight: 700,
-                  color: isActive ? palette.accentLight : palette.accent,
-                  background: isActive ? palette.accentGlow : `${palette.accent}12`,
-                  borderRadius: "5px",
-                  width: "1.6rem",
-                  height: "1.6rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                  transition: "all 0.2s",
-                }}>
-                  {i + 1}
+                <span style={{ fontFamily: font.mono, fontSize: "0.65rem", marginRight: "0.4rem", opacity: 0.6 }}>
+                  {String(i + 1).padStart(2, "0")}
                 </span>
-                <span>{s.title}</span>
+                {s.title}
               </button>
             );
           })}
@@ -946,7 +866,7 @@ function FullProcessPage({ navigate }) {
             }}>
               Complete Process Breakdown
             </p>
-            <p style={{ ...styles.bodyText, maxWidth: "720px", marginBottom: "2.5rem" }}>
+            <p style={{ ...styles.bodyText, maxWidth: "640px", marginBottom: "2.5rem" }}>
               The Competitor Intelligence Brief engagement follows four clear steps from initial
               inquiry to final delivery. Each step is explained in detail below so you know exactly
               what to expect at every stage.
@@ -968,13 +888,13 @@ function FullProcessPage({ navigate }) {
               <FadeIn delay={100}>
                 <p style={{
                   fontFamily: font.mono,
-                  fontSize: "0.72rem",
-                  letterSpacing: "0.1em",
+                  fontSize: "0.68rem",
+                  letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   color: palette.textMuted,
-                  marginBottom: "0.5rem",
+                  marginBottom: "0.4rem",
                 }}>
-                  Step {i + 1} of {PROCESS_STEPS.length}
+                  Step {String(i + 1).padStart(2, "0")} / {String(PROCESS_STEPS.length).padStart(2, "0")}
                 </p>
                 <h2 style={{
                   fontFamily: font.display,
@@ -991,7 +911,7 @@ function FullProcessPage({ navigate }) {
                   color: palette.highlight,
                   lineHeight: 1.75,
                   marginBottom: "1.5rem",
-                  maxWidth: "720px",
+                  maxWidth: "640px",
                 }}>
                   {s.summary}
                 </p>
@@ -1000,7 +920,7 @@ function FullProcessPage({ navigate }) {
               <FadeIn delay={180}>
                 <div style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                   gap: "1rem",
                 }}>
                   <div style={styles.card}>
@@ -1049,7 +969,7 @@ function FullProcessPage({ navigate }) {
               }}>
                 Ready to begin?
               </h2>
-              <p style={{ ...styles.bodyText, maxWidth: "540px", margin: "0 auto 1.5rem", color: palette.text }}>
+              <p style={{ ...styles.bodyText, maxWidth: "480px", margin: "0 auto 1.5rem", color: palette.text }}>
                 The process starts with a single inquiry. No commitment required to start the conversation.
               </p>
               <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
@@ -1119,7 +1039,7 @@ function FullServicesPage({ navigate }) {
     }
   };
 
-  const sideNavWidth = 250;
+  const sideNavWidth = 220;
 
   return (
     <section style={{ padding: "2.5rem 0 4rem", position: "relative" }}>
@@ -1187,11 +1107,11 @@ function FullServicesPage({ navigate }) {
       </div>
 
       <div style={{
-        maxWidth: "1340px",
+        maxWidth: "1140px",
         margin: "0 auto",
-        padding: "0 2.5rem",
+        padding: "0 1.5rem",
         display: "flex",
-        gap: "3rem",
+        gap: "2.5rem",
         alignItems: "flex-start",
       }}>
         {/* Desktop sticky sidebar */}
@@ -1267,7 +1187,7 @@ function FullServicesPage({ navigate }) {
             }}>
               Complete Service Breakdown
             </p>
-            <p style={{ ...styles.bodyText, maxWidth: "720px", marginBottom: "2.5rem" }}>
+            <p style={{ ...styles.bodyText, maxWidth: "640px", marginBottom: "2.5rem" }}>
               Everything included in your Competitor Intelligence Brief, explained in detail.
               Each section below describes what you receive, why it matters, and how it supports
               better decisions.
@@ -1312,7 +1232,7 @@ function FullServicesPage({ navigate }) {
                   color: palette.highlight,
                   lineHeight: 1.75,
                   marginBottom: "1.5rem",
-                  maxWidth: "720px",
+                  maxWidth: "640px",
                 }}>
                   {d.summary}
                 </p>
@@ -1321,7 +1241,7 @@ function FullServicesPage({ navigate }) {
               <FadeIn delay={180}>
                 <div style={{
                   display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
                   gap: "1rem",
                 }}>
                   <div style={styles.card}>
@@ -1370,7 +1290,7 @@ function FullServicesPage({ navigate }) {
               }}>
                 Ready to get started?
               </h2>
-              <p style={{ ...styles.bodyText, maxWidth: "540px", margin: "0 auto 1.5rem", color: palette.text }}>
+              <p style={{ ...styles.bodyText, maxWidth: "480px", margin: "0 auto 1.5rem", color: palette.text }}>
                 Every Competitor Intelligence Brief includes all seven deliverables described above.
                 Reach out to scope your engagement.
               </p>
@@ -1427,21 +1347,6 @@ function AboutPage() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={250}>
-          <div style={styles.card}>
-            <h2 style={styles.cardTitle}>Our Parent Company</h2>
-            <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", marginBottom: "1rem" }}>
-              <img src={R2I_LOGO} alt="R2I Industries, Inc." style={{ height: "56px", width: "auto", borderRadius: "6px" }} />
-              <span style={{ fontFamily: font.display, fontSize: "1.1rem", color: palette.white }}>R2I Industries, Inc.</span>
-            </div>
-            <p style={styles.bodyText}>
-              EchoStack Media, LLC is a subsidiary of{" "}
-              <strong>{BRAND.parent}</strong> R2I Industries is the parent organization
-              behind EchoStack Media's structure, governance, and operational foundation.
-            </p>
-          </div>
-        </FadeIn>
-
         <FadeIn delay={400}>
           <div style={styles.card}>
             <h2 style={styles.cardTitle}>Our Approach</h2>
@@ -1459,16 +1364,38 @@ function AboutPage() {
 
 function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [botField, setBotField] = useState("");
 
   const handleChange = (field) => (e) => setForm({ ...form, [field]: e.target.value });
 
-  const handleSubmit = () => {
-    if (!form.name || !form.email || !form.message) return;
-    setSubmitted(true);
+  const handleSubmit = async () => {
+    if (!form.name || !form.email || !form.message || status === "sending") return;
+    if (botField) return; // honeypot filled: silently drop
+    setStatus("sending");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          subject: "New inquiry from echostackmedia.com",
+          from_name: BRAND.name,
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          message: form.message,
+        }),
+      });
+      const data = await response.json();
+      setStatus(data.success ? "success" : "error");
+    } catch (err) {
+      setStatus("error");
+    }
   };
 
-  const canSubmit = form.name && form.email && form.message;
+  const submitted = status === "success";
+  const canSubmit = form.name && form.email && form.message && status !== "sending";
 
   return (
     <section style={styles.section}>
@@ -1491,6 +1418,15 @@ function ContactPage() {
             </div>
           ) : (
             <div style={styles.card}>
+              <input
+                type="text"
+                value={botField}
+                onChange={(e) => setBotField(e.target.value)}
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <div style={styles.formGroup}>
                 <label style={styles.label}>Name *</label>
                 <input
@@ -1548,8 +1484,14 @@ function ContactPage() {
                 onMouseEnter={(e) => { if (canSubmit) { e.target.style.background = palette.accentDim; e.target.style.boxShadow = `0 0 24px ${palette.accentGlow}`; } }}
                 onMouseLeave={(e) => { e.target.style.background = palette.accent; e.target.style.boxShadow = `0 0 16px ${palette.accentGlow}`; }}
               >
-                Send Inquiry
+                {status === "sending" ? "Sending..." : "Send Inquiry"}
               </button>
+              {status === "error" && (
+                <p style={{ ...styles.bodyText, fontSize: "0.85rem", marginTop: "1rem", color: "#f87171" }}>
+                  Your inquiry could not be sent. Please email us directly at{" "}
+                  <a href={`mailto:${BRAND.contactEmail}`} style={styles.link}>{BRAND.contactEmail}</a>.
+                </p>
+              )}
               <p style={{ ...styles.bodyText, fontSize: "0.82rem", marginTop: "1rem", opacity: 0.5 }}>
                 By submitting this form you agree to our Privacy Policy.
               </p>
@@ -1581,12 +1523,12 @@ function ContactPage() {
 function PrivacyPolicyPage() {
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "800px" }}>
+      <div style={{ ...styles.container, maxWidth: "740px" }}>
         <h1 style={styles.pageTitle}>Privacy Policy</h1>
-        <p style={styles.legalMeta}>Effective date: March 31, 2026</p>
+        <p style={styles.legalMeta}>Effective date: July 4, 2026</p>
 
         <p style={styles.legalText}>
-          This Privacy Policy explains how {BRAND.legal}, a subsidiary of {BRAND.parent},
+          This Privacy Policy explains how {BRAND.legal}
           collects, uses, and protects information when you visit {BRAND.domain} or engage
           with our services.
         </p>
@@ -1614,7 +1556,8 @@ function PrivacyPolicyPage() {
         <h2 style={styles.legalHeading}>Service Providers</h2>
         <p style={styles.legalText}>
           We may share information with service providers who help us operate our business,
-          including payment processors (such as Stripe), hosting providers, and email services.
+          including payment processors (such as Stripe), hosting providers, form submission
+          processing services, and email services.
           These providers access your information only to perform services on our behalf and
           are obligated to protect it.
         </p>
@@ -1648,24 +1591,23 @@ function PrivacyPolicyPage() {
           <a href="tel:+13025488630" style={styles.link}>{BRAND.phone}</a>.
         </p>
         <p style={styles.legalText}>
-          {BRAND.legal}<br />
-          A subsidiary of {BRAND.parent}
+          {BRAND.legal}
         </p>
       </div>
     </section>
   );
 }
 
-function TermsOfServicePage() {
+function TermsOfServicePage({ navigate }) {
   return (
     <section style={styles.section}>
-      <div style={{ ...styles.container, maxWidth: "800px" }}>
+      <div style={{ ...styles.container, maxWidth: "740px" }}>
         <h1 style={styles.pageTitle}>Terms of Service</h1>
-        <p style={styles.legalMeta}>Effective date: March 31, 2026</p>
+        <p style={styles.legalMeta}>Effective date: July 4, 2026</p>
 
         <p style={styles.legalText}>
           These Terms of Service govern your use of {BRAND.domain} and any services
-          provided by {BRAND.legal}, a subsidiary of {BRAND.parent}.
+          provided by {BRAND.legal}.
           By accessing this website or engaging our services, you agree to these terms.
         </p>
 
@@ -1698,7 +1640,14 @@ function TermsOfServicePage() {
           work has begun, refunds are not available, as the deliverable is produced through
           dedicated effort on your behalf. If you are unsatisfied with a completed
           deliverable, contact us to discuss revisions within the original scope.
-          Please also see our Refund and Fulfillment Policy for complete details.
+          Please also see our{" "}
+          <button
+            onClick={() => navigate("Refund and Fulfillment Policy")}
+            style={{ ...styles.link, background: "none", border: "none", padding: 0, cursor: "pointer", font: "inherit" }}
+          >
+            Refund and Fulfillment Policy
+          </button>{" "}
+          for complete details.
         </p>
 
         <h2 style={styles.legalHeading}>Acceptable Use</h2>
@@ -1732,7 +1681,7 @@ function TermsOfServicePage() {
 
         <h2 style={styles.legalHeading}>Governing Law</h2>
         <p style={styles.legalText}>
-          These terms are governed by the laws of the State of Delaware, without regard
+          These terms are governed by the laws of the State of Oklahoma, without regard
           to conflict-of-law principles.
         </p>
 
@@ -1744,8 +1693,7 @@ function TermsOfServicePage() {
           <a href="tel:+13025488630" style={styles.link}>{BRAND.phone}</a>.
         </p>
         <p style={styles.legalText}>
-          {BRAND.legal}<br />
-          A subsidiary of {BRAND.parent}
+          {BRAND.legal}
         </p>
       </div>
     </section>
@@ -1753,6 +1701,99 @@ function TermsOfServicePage() {
 }
 
 // ─── Layout ───
+
+function RefundAndFulfillmentPolicyPage() {
+  return (
+    <section style={styles.section}>
+      <div style={{ ...styles.container, maxWidth: "740px" }}>
+        <h1 style={styles.pageTitle}>Refund and Fulfillment Policy</h1>
+        <p style={styles.legalMeta}>Effective date: July 4, 2026</p>
+
+        <p style={styles.legalText}>
+          This Refund and Fulfillment Policy explains what you are purchasing from {BRAND.legal},
+          when work begins, what counts as delivery, and how refunds, revisions, and disputes
+          are handled. It applies to all services purchased through {BRAND.domain} or by direct
+          invoice, and should be read together with our Terms of Service.
+        </p>
+
+        <h2 style={styles.legalHeading}>What You Are Purchasing</h2>
+        <p style={styles.legalText}>
+          Each engagement is a fixed-scope research deliverable, such as a Competitor
+          Intelligence Brief, defined by a written scope confirmed with you before payment.
+          The scope states the market or competitor set covered, the questions the research
+          will address, the structure of the deliverable, and the estimated delivery timeframe.
+          Work outside the confirmed scope is not included and requires a separate engagement.
+        </p>
+
+        <h2 style={styles.legalHeading}>When Work Begins</h2>
+        <p style={styles.legalText}>
+          Payment is required before fulfillment begins. Work begins after both of the
+          following have occurred: your payment has been received, and the written scope has
+          been confirmed. We will notify you by email when work on your engagement has started.
+        </p>
+
+        <h2 style={styles.legalHeading}>What Counts as Fulfillment</h2>
+        <p style={styles.legalText}>
+          An engagement is fulfilled when the completed deliverable, matching the confirmed
+          scope, is sent to the email address you provided. Delivery of the completed
+          deliverable constitutes fulfillment even if you have not yet opened or reviewed it.
+        </p>
+
+        <h2 style={styles.legalHeading}>Refunds Before Work Begins</h2>
+        <p style={styles.legalText}>
+          If you cancel after payment but before we notify you that work has begun, you will
+          receive a full refund to your original payment method. Refunds are issued within
+          ten business days of the cancellation request.
+        </p>
+
+        <h2 style={styles.legalHeading}>Refunds After Work Begins</h2>
+        <p style={styles.legalText}>
+          Once work has begun, refunds are not available, because the deliverable is produced
+          through dedicated research effort on your behalf and cannot be returned. If we
+          terminate an engagement before delivering the final deliverable, we will refund
+          the payment for the undelivered work.
+        </p>
+
+        <h2 style={styles.legalHeading}>Revisions</h2>
+        <p style={styles.legalText}>
+          Each engagement includes one round of revisions within the original confirmed scope,
+          requested within fourteen days of delivery. Revisions correct errors, address gaps
+          against the confirmed scope, or clarify findings. Requests that expand the scope,
+          add competitors, or change the research questions are new work and are quoted
+          separately.
+        </p>
+
+        <h2 style={styles.legalHeading}>Disputes</h2>
+        <p style={styles.legalText}>
+          If you believe a deliverable does not match the confirmed scope, contact us at{" "}
+          <a href={`mailto:${BRAND.contactEmail}`} style={styles.link}>{BRAND.contactEmail}</a>{" "}
+          within fourteen days of delivery with a description of the gap. We will review the
+          deliverable against the confirmed scope and either revise the deliverable, complete
+          the missing portion, or, where the gap is material and cannot be corrected, issue a
+          partial or full refund at our reasonable discretion.
+        </p>
+
+        <h2 style={styles.legalHeading}>How to Request a Refund or Revision</h2>
+        <p style={styles.legalText}>
+          Send your request to{" "}
+          <a href={`mailto:${BRAND.contactEmail}`} style={styles.link}>{BRAND.contactEmail}</a>{" "}
+          from the email address used for the engagement, including the engagement or invoice
+          reference. We respond to refund and revision requests within five business days.
+        </p>
+
+        <h2 style={styles.legalHeading}>Changes to This Policy</h2>
+        <p style={styles.legalText}>
+          We may update this policy from time to time. Changes will be posted on this page
+          with an updated effective date and apply to engagements confirmed after that date.
+        </p>
+
+        <p style={styles.legalText}>
+          {BRAND.legal}
+        </p>
+      </div>
+    </section>
+  );
+}
 
 function Header({ currentPage, navigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -1839,7 +1880,6 @@ function Footer({ navigate }) {
         <GlowLine />
         <div style={{ ...styles.footerBrand, marginTop: "1.5rem" }}>
           <p style={styles.footerCompany}>{BRAND.legal}</p>
-          <p style={styles.footerParent}>A subsidiary of {BRAND.parent}</p>
         </div>
         <div style={styles.footerLinks}>
           {FOOTER_LEGAL.map((p) => (
@@ -1865,36 +1905,21 @@ function Footer({ navigate }) {
 // ─── App ───
 
 export default function App() {
-  const [page, setPage] = useState(() => pathToPage(window.location.pathname));
-
-  useEffect(() => {
-    const onPopState = () => setPage(pathToPage(window.location.pathname));
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, []);
-
-  // Set favicon dynamically
-  useEffect(() => {
-    try {
-      let link = document.querySelector("link[rel='icon']");
-      if (!link) { link = document.createElement("link"); link.rel = "icon"; document.head.appendChild(link); }
-      link.href = ES_LOGO;
-    } catch (e) {}
-  }, []);
+  const [page, setPage] = useState("Home");
 
   const navigate = (p) => {
-    const path = pageToPath(p);
-    window.history.pushState(null, "", path);
     setPage(p);
     window.scrollTo(0, 0);
   };
 
   const renderPage = () => {
+    // Check if it's a deliverable detail page
     if (page.startsWith("detail:")) {
       const deliverable = DELIVERABLES.find((d) => d.key === page);
       if (deliverable) return <DeliverableDetailPage deliverable={deliverable} navigate={navigate} />;
       return <HomePage navigate={navigate} />;
     }
+    // Check if it's a process step detail page
     if (page.startsWith("step:")) {
       const step = PROCESS_STEPS.find((s) => s.key === page);
       if (step) return <ProcessStepDetailPage step={step} navigate={navigate} />;
@@ -1908,7 +1933,8 @@ export default function App() {
       case "About": return <AboutPage />;
       case "Contact": return <ContactPage />;
       case "Privacy Policy": return <PrivacyPolicyPage />;
-      case "Terms of Service": return <TermsOfServicePage />;
+      case "Terms of Service": return <TermsOfServicePage navigate={navigate} />;
+      case "Refund and Fulfillment Policy": return <RefundAndFulfillmentPolicyPage />;
       default: return <HomePage navigate={navigate} />;
     }
   };
@@ -1947,9 +1973,9 @@ const styles = {
     transition: "box-shadow 0.3s, border-color 0.3s",
   },
   headerInner: {
-    maxWidth: "1320px",
+    maxWidth: "1080px",
     margin: "0 auto",
-    padding: "0 2.5rem",
+    padding: "0 1.5rem",
     height: "68px",
     display: "flex",
     alignItems: "center",
@@ -2035,7 +2061,7 @@ const styles = {
   },
   heroInner: {
     position: "relative",
-    maxWidth: "880px",
+    maxWidth: "780px",
     margin: "0 auto",
     padding: "5.5rem 1.5rem 5rem",
     textAlign: "center",
@@ -2062,7 +2088,7 @@ const styles = {
   heroSub: {
     fontSize: "1.08rem",
     color: palette.textMuted,
-    maxWidth: "620px",
+    maxWidth: "560px",
     margin: "0 auto 2.5rem",
     lineHeight: 1.7,
   },
@@ -2105,9 +2131,9 @@ const styles = {
     padding: "4rem 0",
   },
   container: {
-    maxWidth: "1000px",
+    maxWidth: "820px",
     margin: "0 auto",
-    padding: "0 2rem",
+    padding: "0 1.5rem",
   },
   sectionTitle: {
     fontFamily: font.display,
@@ -2221,7 +2247,7 @@ const styles = {
     marginTop: "auto",
   },
   footerInner: {
-    maxWidth: "1320px",
+    maxWidth: "1080px",
     margin: "0 auto",
     textAlign: "center",
   },
